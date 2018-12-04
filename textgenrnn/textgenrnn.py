@@ -223,8 +223,8 @@ class textgenrnn:
 
         # Keep the text-only version of the model if using context labels
         if context_labels is not None:
-            self.model = Model(inputs=self.model.input[0],
-                               outputs=self.model.output[1])
+            self.model = Model(inputs=self.model.input,
+                               outputs=self.model.output)
 
     def train_new_model(self, texts, context_labels=None, num_epochs=50,
                         gen_epochs=1, batch_size=128, dropout=0.0,
